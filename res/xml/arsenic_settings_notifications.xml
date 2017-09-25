@@ -62,9 +62,14 @@
     
     </PreferenceCategory>
 
-    <!--PreferenceCategory
+    <PreferenceCategory
         android:key="notification_heads"
-        android:title="@string/notification_heads">-->
+        android:title="@string/notification_heads">
+
+    <Preference
+        android:key="heads_up_notifications"
+        android:title="@string/heads_up_notifications"
+        android:fragment="com.arsenic.settings.fragments.HeadsUpSettings" />
 
     </PreferenceCategory>
 
