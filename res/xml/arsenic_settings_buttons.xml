@@ -27,7 +27,7 @@
         android:key="hardware_keys"
         android:title="@string/hardware_keys_category" >
 
-        <com.arsenic.settings.preferences.CustomSeekBarPreference
+        <com.arsenic.settings.preferences.SystemSettingSeekBarPreference
             android:key="button_brightness"
             android:title="@string/button_brightness_title"
             android:max="255"

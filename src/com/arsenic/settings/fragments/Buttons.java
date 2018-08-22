@@ -33,7 +33,7 @@ import com.android.settings.R;
 
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.arsenic.settings.preferences.CustomSeekBarPreference;
+import com.arsenic.settings.preferences.SystemSettingSeekBarPreference;
 
 import com.android.internal.logging.nano.MetricsProto;
 
@@ -49,7 +49,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_HWKEY = "hardware_keys";
 
     private ListPreference mBacklightTimeout;
-    private CustomSeekBarPreference mButtonBrightness;
+    private SystemSettingSeekBarPreference mButtonBrightness;
     private SwitchPreference mButtonBrightness_sw;
 
     @Override
@@ -65,7 +65,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         mBacklightTimeout =
                 (ListPreference) findPreference(KEY_BACKLIGHT_TIMEOUT);
         mButtonBrightness =
-                (CustomSeekBarPreference) findPreference(KEY_BUTTON_BRIGHTNESS);
+                (SystemSettingSeekBarPreference) findPreference(KEY_BUTTON_BRIGHTNESS);
         mButtonBrightness_sw =
                 (SwitchPreference) findPreference(KEY_BUTTON_BRIGHTNESS_SW);
 
