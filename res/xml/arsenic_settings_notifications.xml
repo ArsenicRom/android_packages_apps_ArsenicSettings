@@ -18,11 +18,11 @@
 	android:title="@string/notifications_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <!--<PreferenceCategory
+    <PreferenceCategory
         android:key="notification_lights"
         android:title="@string/notification_lights">
 		
-        <Preference
+        <!--<Preference
             android:key="charging_light"
             android:fragment="com.arsenic.settings.BatteryLightSettings"
             android:title="@string/battery_light_settings" />-->

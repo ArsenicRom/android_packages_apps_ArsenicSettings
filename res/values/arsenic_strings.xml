@@ -117,9 +117,9 @@
     <string name="flashlight_on_call_dnd">Only in DND mode</string>
     <string name="flashlight_on_call_always">Always</string>
 
-        <!-- Recents Membar --> 
-    <string name="systemui_recents_mem_display_title">Show Memory Bar</string> 
-    <string name="systemui_recents_mem_display_summary">Enable Disable Ram bar in recent app view</string> 
+    <!-- Recents Membar -->
+    <string name="systemui_recents_mem_display_title">Show Memory Bar</string>
+    <string name="systemui_recents_mem_display_summary">Enable Disable Ram bar in recent app view</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -471,6 +471,7 @@
     <string name="qs_tile_title_visibility_summary">Display title below each tile</string>
 
     <string name="gesture_preference_aosp">System Gestures</string>
+    <string name="gesture_preference_aosp_summary">Access the device specific system gestures</string>
 
     <!-- QS footer warnings -->
     <string name="qs_footer_warnings_title">QS footer warnings</string>
