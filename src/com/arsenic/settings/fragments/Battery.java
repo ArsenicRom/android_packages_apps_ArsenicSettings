@@ -44,6 +44,6 @@ public class Battery extends SettingsPreferenceFragment {
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.ARSENICC_SETTINGS;
+        return MetricsProto.MetricsEvent.ARSENIC_SETTINGS;
     }
 }

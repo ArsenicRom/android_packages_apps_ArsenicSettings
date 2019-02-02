@@ -8,7 +8,7 @@ import android.support.v14.preference.SwitchPreference;
 import android.support.v7.preference.Preference; 
  
 import com.android.internal.logging.nano.MetricsProto; 
-import com.android.internal.util.hwkeys.ActionUtils; 
+//import com.android.internal.util.hwkeys.ActionUtils; 
 import com.android.settings.R; 
 import com.android.settings.SettingsPreferenceFragment; 
 import com.arsenic.settings.preferences.SecureSettingSeekBarPreference; 
@@ -64,7 +64,7 @@ public class EdgeGesturesSettings extends SettingsPreferenceFragment implements
  
     @Override 
     public boolean onPreferenceChange(Preference preference, Object newValue) { 
-        if (preference == enabledPreference) { 
+        /*if (preference == enabledPreference) { 
             int enabled = ((boolean) newValue) ? 1 : 0; 
             //Settings.Secure.putIntForUser(getContentResolver(), Settings.Secure.EDGE_GESTURES_ENABLED, enabled, UserHandle.USER_CURRENT); 
  

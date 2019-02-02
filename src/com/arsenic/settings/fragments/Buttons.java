@@ -34,10 +34,10 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.arsenic.settings.preferences.SystemSettingSeekBarPreference;
-
+import lineageos.providers.LineageSettings;
 import com.android.internal.logging.nano.MetricsProto;
 
-public class ButtonSettings extends SettingsPreferenceFragment implements
+public class Buttons extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener{
 
     //Keys
@@ -71,8 +71,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
         if (mBacklightTimeout != null) {
             mBacklightTimeout.setOnPreferenceChangeListener(this);
-            int BacklightTimeout = Settings.System.getInt(getContentResolver(),
-                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, 500);
+            int BacklightTimeout = LineageSettings.Secure.getInt(getContentResolver(),
+                    LineageSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT, 500);
             mBacklightTimeout.setValue(Integer.toString(BacklightTimeout));
             mBacklightTimeout.setSummary(mBacklightTimeout.getEntry());
         }
@@ -80,16 +80,16 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         if (variableBrightness) {
             prefScreen.removePreference(mButtonBrightness_sw);
             if (mButtonBrightness != null) {
-                int ButtonBrightness = Settings.System.getInt(getContentResolver(),
-                        Settings.System.BUTTON_BRIGHTNESS, 255);
+                int ButtonBrightness = LineageSettings.Secure.getInt(getContentResolver(),
+                        LineageSettings.Secure.BUTTON_BRIGHTNESS, 255);
                 mButtonBrightness.setValue(ButtonBrightness / 1);
                 mButtonBrightness.setOnPreferenceChangeListener(this);
             }
         } else {
             prefScreen.removePreference(mButtonBrightness);
             if (mButtonBrightness_sw != null) {
-                mButtonBrightness_sw.setChecked((Settings.System.getInt(getContentResolver(),
-                        Settings.System.BUTTON_BRIGHTNESS, 1) == 1));
+                mButtonBrightness_sw.setChecked((LineageSettings.Secure.getInt(getContentResolver(),
+                        LineageSettings.Secure.BUTTON_BRIGHTNESS, 1) == 1));
                 mButtonBrightness_sw.setOnPreferenceChangeListener(this);
             }
         }
@@ -100,8 +100,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         if (preference == mBacklightTimeout) {
             String BacklightTimeout = (String) newValue;
             int BacklightTimeoutValue = Integer.parseInt(BacklightTimeout);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, BacklightTimeoutValue);
+            LineageSettings.Secure.putInt(getActivity().getContentResolver(),
+                    LineageSettings.Secure.BUTTON_BACKLIGHT_TIMEOUT, BacklightTimeoutValue);
             int BacklightTimeoutIndex = mBacklightTimeout
                     .findIndexOfValue(BacklightTimeout);
             mBacklightTimeout
@@ -109,13 +109,13 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mButtonBrightness) {
             int value = (Integer) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.BUTTON_BRIGHTNESS, value * 1);
+            LineageSettings.Secure.putInt(getActivity().getContentResolver(),
+                    LineageSettings.Secure.BUTTON_BRIGHTNESS, value * 1);
             return true;
         } else if (preference == mButtonBrightness_sw) {
             boolean value = (Boolean) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.BUTTON_BRIGHTNESS, value ? 1 : 0);
+            LineageSettings.Secure.putInt(getActivity().getContentResolver(),
+                    LineageSettings.Secure.BUTTON_BRIGHTNESS, value ? 1 : 0);
             return true;
         }
         return false;
